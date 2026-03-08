@@ -61,11 +61,14 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             );
           })}
         </nav>
-        <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-          <Button variant="ghost" onClick={handleSignOut} className="justify-start gap-3 text-muted-foreground">
-            <LogOut className="h-4 w-4" /> Sign Out
-          </Button>
-        </motion.div>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <Button variant="ghost" onClick={handleSignOut} className="justify-start gap-3 text-muted-foreground">
+              <LogOut className="h-4 w-4" /> Sign Out
+            </Button>
+          </motion.div>
+        </div>
       </aside>
 
       {/* Mobile Header */}
