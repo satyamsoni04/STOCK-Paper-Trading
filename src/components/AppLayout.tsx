@@ -24,7 +24,7 @@ const sidebarVariants = {
 
 const navItemVariants = {
   hidden: { opacity: 0, x: -20, filter: 'blur(4px)' },
-  visible: { opacity: 1, x: 0, filter: 'blur(0px)', transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] } },
+  visible: { opacity: 1, x: 0, filter: 'blur(0px)', transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] as const } },
 };
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
