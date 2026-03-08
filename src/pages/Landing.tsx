@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { TrendingUp, Shield, BarChart3 } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import PageTransition from '@/components/PageTransition';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const wordVariants = {
   hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
@@ -28,6 +28,7 @@ const features = [
 ];
 
 export default function Landing() {
+  const [showAuthOptions, setShowAuthOptions] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
   const heroY = useTransform(scrollYProgress, [0, 1], [0, 150]);
@@ -127,17 +128,43 @@ export default function Landing() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8, duration: 0.5 }}
+              className="flex flex-col items-center gap-3"
             >
-              <Link to="/signup">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button size="lg" className="text-lg px-8 py-6 glow-pulse">
-                    Start Trading Free
-                  </Button>
-                </motion.div>
-              </Link>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button size="lg" className="text-lg px-8 py-6 glow-pulse" onClick={() => setShowAuthOptions(v => !v)}>
+                  Start Trading Free
+                </Button>
+              </motion.div>
+
+              <AnimatePresence>
+                {showAuthOptions && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex gap-3"
+                  >
+                    <Link to="/login">
+                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <Button variant="outline" size="lg" className="glass-card px-6">
+                          Login
+                        </Button>
+                      </motion.div>
+                    </Link>
+                    <Link to="/signup">
+                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <Button size="lg" className="px-6">
+                          Sign Up
+                        </Button>
+                      </motion.div>
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           </motion.div>
 
