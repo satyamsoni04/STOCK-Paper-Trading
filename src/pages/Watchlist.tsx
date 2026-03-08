@@ -30,7 +30,7 @@ export default function Watchlist() {
 
   return (
     <AppLayout>
-      <h1 className="text-2xl font-bold mb-6">Watchlist</h1>
+      <h1 className="text-2xl font-bold mb-6 text-center">Watchlist</h1>
       <Card>
         <CardContent className="p-0">
           {items.length === 0 ? (
