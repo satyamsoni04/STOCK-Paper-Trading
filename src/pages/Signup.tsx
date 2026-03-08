@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { motion } from 'framer-motion';
 import PageTransition from '@/components/PageTransition';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export default function Signup() {
   const [name, setName] = useState('');
@@ -35,6 +36,9 @@ export default function Signup() {
   return (
     <PageTransition>
       <div className="min-h-screen flex items-center justify-center bg-background p-4 relative overflow-hidden">
+        <div className="absolute top-4 right-4 z-20">
+          <ThemeToggle />
+        </div>
         <motion.div
           className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-primary/10 blur-[120px]"
           animate={{ scale: [1, 1.2, 1] }}

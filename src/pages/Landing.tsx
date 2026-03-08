@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { TrendingUp, Shield, BarChart3 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import PageTransition from '@/components/PageTransition';
+import ThemeToggle from '@/components/ThemeToggle';
 import { useRef } from 'react';
 
 const wordVariants = {
@@ -68,7 +69,8 @@ export default function Landing() {
           <h1 className="absolute left-1/2 -translate-x-1/2 text-2xl font-extrabold tracking-wider bg-gradient-to-r from-primary via-foreground to-primary bg-clip-text text-transparent drop-shadow-[0_0_8px_hsl(142,71%,45%,0.4)] hover:drop-shadow-[0_0_16px_hsl(142,71%,45%,0.7)] hover:scale-105 transition-all duration-300 cursor-default">
             WOJAK TRADE'S
           </h1>
-          <div className="flex gap-2 ml-auto">
+          <div className="flex gap-2 ml-auto items-center">
+            <ThemeToggle />
             <Link to="/login">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button variant="ghost" className="hover:glow-sm">Login</Button>
