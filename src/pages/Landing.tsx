@@ -7,14 +7,14 @@ export default function Landing() {
     <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-4 border-b border-border">
+        <h1 className="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-primary via-foreground to-primary bg-clip-text text-transparent">
+          WOJAK TRADE'S
+        </h1>
         <div className="flex gap-2">
           <Link to="/login"><Button variant="ghost">Login</Button></Link>
           <Link to="/signup"><Button>Sign Up</Button></Link>
         </div>
-        <h1 className="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-primary via-foreground to-primary bg-clip-text text-transparent">
-          WOJAK TRADE'S
-        </h1>
-        <div className="w-[140px]" />
+      </header>
       </header>
 
       {/* Hero */}
