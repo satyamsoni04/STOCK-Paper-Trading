@@ -6,7 +6,7 @@ export default function Landing() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 border-b border-border">
+      <header className="flex items-center justify-between px-6 py-4 border-b border-border relative">
         <h1 className="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-primary via-foreground to-primary bg-clip-text text-transparent drop-shadow-[0_0_8px_hsl(142,71%,45%,0.4)] hover:drop-shadow-[0_0_16px_hsl(142,71%,45%,0.7)] hover:scale-105 transition-all duration-300 cursor-default">
           WOJAK TRADE'S
         </h1>
