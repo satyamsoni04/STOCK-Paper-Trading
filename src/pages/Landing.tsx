@@ -15,12 +15,12 @@ export default function Landing() {
       </header>
 
       {/* Hero */}
-      <main className="flex-1 flex flex-col items-center justify-center px-6 text-center">
+      <main className="flex-1 flex flex-col items-center justify-center px-6 text-center border-4 border-double shadow-md">
         <h2 className="text-4xl md:text-6xl font-bold mb-4">
           Learn Trading.<br />
           <span className="text-primary">Risk Nothing.</span>
         </h2>
-        <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-8 italic">
+        <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-8 italic bg-[sidebar-primary-foreground] bg-[#0d3cab]">
           Practice stock trading with <span className="font-bold text-primary">$100,000</span> virtual money. Track <span className="font-bold text-primary">US &amp; Indian markets</span>, build your <span className="font-bold text-foreground">portfolio</span>, and master <span className="font-bold text-foreground">trading strategies</span>.
         </p>
         <Link to="/signup">
@@ -30,22 +30,22 @@ export default function Landing() {
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-4xl w-full">
           {[
-            { icon: TrendingUp, title: 'Real-Time Prices', desc: '40+ US & Indian stocks with live simulated pricing' },
-            { icon: Shield, title: 'Zero Risk', desc: 'Trade with virtual money — no real funds needed' },
-            { icon: BarChart3, title: 'Track Performance', desc: 'Portfolio analytics, P&L tracking, and trade history' },
-          ].map(f => (
-            <div key={f.title} className="bg-card border border-border rounded-lg p-6 text-left">
+          { icon: TrendingUp, title: 'Real-Time Prices', desc: '40+ US & Indian stocks with live simulated pricing' },
+          { icon: Shield, title: 'Zero Risk', desc: 'Trade with virtual money — no real funds needed' },
+          { icon: BarChart3, title: 'Track Performance', desc: 'Portfolio analytics, P&L tracking, and trade history' }].
+          map((f) =>
+          <div key={f.title} className="bg-card border border-border rounded-lg p-6 text-left">
               <f.icon className="h-8 w-8 text-primary mb-3" />
               <h3 className="font-semibold text-foreground mb-1">{f.title}</h3>
               <p className="text-sm text-muted-foreground">{f.desc}</p>
             </div>
-          ))}
+          )}
         </div>
       </main>
 
       <footer className="text-center py-4 text-sm text-muted-foreground border-t border-border">
         WOJAK TRADE'S — A Paper Trading Simulator
       </footer>
-    </div>
-  );
+    </div>);
+
 }
