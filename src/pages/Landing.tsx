@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { TrendingUp, Shield, BarChart3 } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import PageTransition from '@/components/PageTransition';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const wordVariants = {
   hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
