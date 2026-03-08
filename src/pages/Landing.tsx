@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { TrendingUp, Shield, BarChart3 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import PageTransition from '@/components/PageTransition';
+import ThemeToggle from '@/components/ThemeToggle';
 import { useRef } from 'react';
 
 const wordVariants = {
