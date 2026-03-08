@@ -6,12 +6,12 @@ export default function Landing() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 border-b border-border">
-        <h1 className="text-xl font-bold text-primary">WOJAK TRADE'S</h1>
-        <div className="flex gap-2">
-          <Link to="/login"><Button variant="ghost">Login</Button></Link>
-          <Link to="/signup"><Button>Sign Up</Button></Link>
-        </div>
+      <header className="flex items-center justify-center gap-8 px-6 py-4 border-b border-border">
+        <Link to="/login"><Button variant="ghost">Login</Button></Link>
+        <h1 className="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-primary via-foreground to-primary bg-clip-text text-transparent">
+          WOJAK TRADE'S
+        </h1>
+        <Link to="/signup"><Button>Sign Up</Button></Link>
       </header>
 
       {/* Hero */}
