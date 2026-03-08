@@ -51,20 +51,22 @@ const App = () => {
   }, []);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <AnimatePresence mode="wait">
-          {loading && <LoadingScreen key="loader" />}
-        </AnimatePresence>
-        <BrowserRouter>
-          <AuthProvider>
-            <AnimatedRoutes />
-          </AuthProvider>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <AnimatePresence mode="wait">
+            {loading && <LoadingScreen key="loader" />}
+          </AnimatePresence>
+          <BrowserRouter>
+            <AuthProvider>
+              <AnimatedRoutes />
+            </AuthProvider>
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 };
 

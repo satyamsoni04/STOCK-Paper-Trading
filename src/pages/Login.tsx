@@ -34,6 +34,9 @@ export default function Login() {
   return (
     <PageTransition>
       <div className="min-h-screen flex items-center justify-center bg-background p-4 relative overflow-hidden">
+        <div className="absolute top-4 right-4 z-20">
+          <ThemeToggle />
+        </div>
         {/* Background orbs */}
         <motion.div
           className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/10 blur-[100px]"
