@@ -127,17 +127,43 @@ export default function Landing() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8, duration: 0.5 }}
+              className="flex flex-col items-center gap-3"
             >
-              <Link to="/signup">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button size="lg" className="text-lg px-8 py-6 glow-pulse">
-                    Start Trading Free
-                  </Button>
-                </motion.div>
-              </Link>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button size="lg" className="text-lg px-8 py-6 glow-pulse" onClick={() => setShowAuthOptions(v => !v)}>
+                  Start Trading Free
+                </Button>
+              </motion.div>
+
+              <AnimatePresence>
+                {showAuthOptions && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex gap-3"
+                  >
+                    <Link to="/login">
+                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <Button variant="outline" size="lg" className="glass-card px-6">
+                          Login
+                        </Button>
+                      </motion.div>
+                    </Link>
+                    <Link to="/signup">
+                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <Button size="lg" className="px-6">
+                          Sign Up
+                        </Button>
+                      </motion.div>
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           </motion.div>
 
