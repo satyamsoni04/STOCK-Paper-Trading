@@ -20,8 +20,8 @@ export default function Landing() {
           Learn Trading.<br />
           <span className="text-primary">Risk Nothing.</span>
         </h2>
-        <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-8">
-          Practice stock trading with $100,000 virtual money. Track US & Indian markets, build your portfolio, and master trading strategies.
+        <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-8 italic">
+          Practice stock trading with <span className="font-bold text-primary">$100,000</span> virtual money. Track <span className="font-bold text-primary">US &amp; Indian markets</span>, build your <span className="font-bold text-foreground">portfolio</span>, and master <span className="font-bold text-foreground">trading strategies</span>.
         </p>
         <Link to="/signup">
           <Button size="lg" className="text-lg px-8 py-6">Start Trading Free</Button>
