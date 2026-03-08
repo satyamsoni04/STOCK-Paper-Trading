@@ -67,7 +67,7 @@ export default function Dashboard() {
     <PageTransition>
       <AppLayout>
         <motion.h1
-          className="text-2xl font-bold mb-6"
+          className="text-2xl font-bold mb-6 text-center"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}

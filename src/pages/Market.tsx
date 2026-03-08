@@ -50,7 +50,7 @@ export default function Market() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <h1 className="text-2xl font-bold">Market Explorer</h1>
+          <h1 className="text-2xl font-bold text-center flex-1">Market Explorer</h1>
           <div className="relative w-full sm:w-64">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input placeholder="Search stocks..." value={search} onChange={e => setSearch(e.target.value)} className="pl-9 transition-shadow duration-300 focus:shadow-[0_0_15px_hsl(142,71%,45%,0.2)]" />

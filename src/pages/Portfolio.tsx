@@ -30,7 +30,7 @@ export default function Portfolio() {
 
   return (
     <AppLayout>
-      <h1 className="text-2xl font-bold mb-6">Portfolio</h1>
+      <h1 className="text-2xl font-bold mb-6 text-center">Portfolio</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
         <Card>

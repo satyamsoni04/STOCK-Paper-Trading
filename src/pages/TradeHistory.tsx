@@ -18,7 +18,7 @@ export default function TradeHistory() {
 
   return (
     <AppLayout>
-      <h1 className="text-2xl font-bold mb-6">Trade History</h1>
+      <h1 className="text-2xl font-bold mb-6 text-center">Trade History</h1>
       <Card>
         <CardContent className="p-0">
           {trades.length === 0 ? (
