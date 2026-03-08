@@ -8,21 +8,17 @@ import AppLayout from '@/components/AppLayout';
 import { Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 import PageTransition from '@/components/PageTransition';
-import AnimatedHeading from '@/components/AnimatedHeading';
 
 function StockRow({ stock, index }: { stock: StockInfo; index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: -20, filter: 'blur(4px)' }}
-      animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-      transition={{ delay: index * 0.03, duration: 0.4 }}
+      initial={{ opacity: 0, x: -15 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: index * 0.03, duration: 0.3 }}
     >
-      <Link
-        to={`/stock/${stock.symbol}`}
-        className="flex items-center justify-between px-4 py-3 hover:bg-accent/50 transition-all duration-300 hover:pl-6 hover:shadow-[inset_3px_0_0_hsl(var(--primary))] group"
-      >
+      <Link to={`/stock/${stock.symbol}`} className="flex items-center justify-between px-4 py-3 hover:bg-accent/50 transition-all duration-200 hover:pl-5">
         <div className="flex-1">
-          <p className="font-medium text-sm group-hover:text-primary transition-colors duration-300">{stock.symbol}</p>
+          <p className="font-medium text-sm">{stock.symbol}</p>
           <p className="text-xs text-muted-foreground">{stock.name}</p>
         </div>
         <div className="text-right mr-4">
@@ -54,46 +50,35 @@ export default function Market() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <AnimatedHeading text="Market Explorer" className="flex-1" />
-          <motion.div
-            className="relative w-full sm:w-64"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.4 }}
-          >
+          <h1 className="text-2xl font-bold text-center flex-1">Market Explorer</h1>
+          <div className="relative w-full sm:w-64">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input placeholder="Search stocks..." value={search} onChange={e => setSearch(e.target.value)} className="pl-9 glass-card transition-shadow duration-300 focus:shadow-[0_0_20px_hsl(var(--primary)/0.2)]" />
-          </motion.div>
+            <Input placeholder="Search stocks..." value={search} onChange={e => setSearch(e.target.value)} className="pl-9 transition-shadow duration-300 focus:shadow-[0_0_15px_hsl(142,71%,45%,0.2)]" />
+          </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-        >
-          <Tabs defaultValue="us">
-            <TabsList className="mb-4">
-              <TabsTrigger value="us" className="transition-all duration-300">🇺🇸 US Stocks</TabsTrigger>
-              <TabsTrigger value="in" className="transition-all duration-300">🇮🇳 Indian Stocks</TabsTrigger>
-            </TabsList>
-            <TabsContent value="us">
-              <Card className="glass-card border-border/50 overflow-hidden">
-                <CardContent className="p-0 divide-y divide-border/50">
-                  {filterStocks(US_STOCKS).map((s, i) => <StockRow key={s.symbol} stock={s} index={i} />)}
-                  {filterStocks(US_STOCKS).length === 0 && <p className="p-4 text-sm text-muted-foreground">No stocks found.</p>}
-                </CardContent>
-              </Card>
-            </TabsContent>
-            <TabsContent value="in">
-              <Card className="glass-card border-border/50 overflow-hidden">
-                <CardContent className="p-0 divide-y divide-border/50">
-                  {filterStocks(IN_STOCKS).map((s, i) => <StockRow key={s.symbol} stock={s} index={i} />)}
-                  {filterStocks(IN_STOCKS).length === 0 && <p className="p-4 text-sm text-muted-foreground">No stocks found.</p>}
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
-        </motion.div>
+        <Tabs defaultValue="us">
+          <TabsList className="mb-4">
+            <TabsTrigger value="us">🇺🇸 US Stocks</TabsTrigger>
+            <TabsTrigger value="in">🇮🇳 Indian Stocks</TabsTrigger>
+          </TabsList>
+          <TabsContent value="us">
+            <Card>
+              <CardContent className="p-0 divide-y divide-border">
+                {filterStocks(US_STOCKS).map((s, i) => <StockRow key={s.symbol} stock={s} index={i} />)}
+                {filterStocks(US_STOCKS).length === 0 && <p className="p-4 text-sm text-muted-foreground">No stocks found.</p>}
+              </CardContent>
+            </Card>
+          </TabsContent>
+          <TabsContent value="in">
+            <Card>
+              <CardContent className="p-0 divide-y divide-border">
+                {filterStocks(IN_STOCKS).map((s, i) => <StockRow key={s.symbol} stock={s} index={i} />)}
+                {filterStocks(IN_STOCKS).length === 0 && <p className="p-4 text-sm text-muted-foreground">No stocks found.</p>}
+              </CardContent>
+            </Card>
+          </TabsContent>
+        </Tabs>
       </AppLayout>
     </PageTransition>
   );
