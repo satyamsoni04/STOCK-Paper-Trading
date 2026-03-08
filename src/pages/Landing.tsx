@@ -15,7 +15,6 @@ export default function Landing() {
           <Link to="/signup"><Button>Sign Up</Button></Link>
         </div>
       </header>
-      </header>
 
       {/* Hero */}
       <main className="flex-1 flex flex-col items-center justify-center px-6 text-center border-4 border-double shadow-md">
