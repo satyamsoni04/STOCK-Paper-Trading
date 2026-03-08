@@ -253,6 +253,5 @@ export default function StockDetail() {
 }
 
 function AnimatePresenceWrapper({ children, show }: { children: React.ReactNode; show: boolean }) {
-  const { AnimatePresence } = require('framer-motion');
-  return <AnimatePresence>{show && children}</AnimatePresence>;
+  return <motion.div>{show && children}</motion.div>;
 }
