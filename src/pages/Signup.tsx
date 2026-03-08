@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { motion } from 'framer-motion';
 import PageTransition from '@/components/PageTransition';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export default function Signup() {
   const [name, setName] = useState('');
