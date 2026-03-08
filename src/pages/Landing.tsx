@@ -9,7 +9,7 @@ const wordVariants = {
   hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
   visible: (i: number) => ({
     opacity: 1, y: 0, filter: 'blur(0px)',
-    transition: { delay: i * 0.12, duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+    transition: { delay: i * 0.12, duration: 0.5, ease: [0.4, 0, 0.2, 1] as const },
   }),
 };
 
@@ -17,7 +17,7 @@ const cardVariants = {
   hidden: { opacity: 0, y: 40, scale: 0.95 },
   visible: (i: number) => ({
     opacity: 1, y: 0, scale: 1,
-    transition: { delay: i * 0.15, duration: 0.6, ease: [0.4, 0, 0.2, 1] },
+    transition: { delay: i * 0.15, duration: 0.6, ease: [0.4, 0, 0.2, 1] as const },
   }),
 };
 
